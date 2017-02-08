@@ -1,0 +1,7 @@
+{
+    "name":"generator",
+    "description":"Plis new is a set of usefull generators",
+    "aliases":["gen","g"],
+    "script_type":"lua",
+    "sub_commands":["new"]
+}

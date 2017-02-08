@@ -1,0 +1,35 @@
+{
+    "name":"new",
+    "description":"The new supcomand creates a new generator",
+    "aliases":["n"],
+    "flags":[
+        {
+            "name":"aliases",
+            "short":"a",
+            "description":"The generator aliases coma seperated",
+            "type":"string"
+        },
+        {
+            "name":"type",
+            "short":"t",
+            "description":"The generator script type",
+            "type":"string",
+            "default":"lua"
+        },
+        {
+            "name":"subcommand",
+            "short":"s",
+            "description":"Use this flag if you want to generate a subcommand",
+            "type":"bool"
+        }
+    ],
+    "args":[
+         {
+            "name":"name",
+            "description":"The generator name",
+            "type":"string",
+            "required":true
+        }
+    ],
+    "script_type":"lua"
+}
