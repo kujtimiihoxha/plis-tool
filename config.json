@@ -1,7 +1,13 @@
 {
-    "name":"generator",
-    "description":"Plis new is a set of usefull generators",
-    "aliases":["gen","g"],
-    "script_type":"lua",
-    "sub_commands":["new"]
+    "aliases": [
+        "gen",
+        "g"
+    ],
+    "description": "Plis new is a set of usefull generators",
+    "name": "generator",
+    "script_type": "lua",
+    "sub_commands": [
+        "new",
+        "add"
+    ]
 }

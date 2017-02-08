@@ -1,0 +1,29 @@
+{
+    "name":"argument",
+    "aliases":["arg"],
+    "description":"This is the 'argument' plis generator ",
+      "flags":[
+       {
+            "name":"type",
+            "short":"t",
+            "description":"The argument type",
+            "type":"string",
+            "default":"string"
+        },
+       {
+            "name":"required",
+            "short":"r",
+            "description":"Is the argument required",
+            "type":"bool"
+        }
+    ],
+    "args":[
+          {
+            "name":"name",
+            "description":"The argument name",
+            "type":"string",
+            "required":true
+        }
+    ],
+    "script_type":"lua"
+}

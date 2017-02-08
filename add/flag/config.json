@@ -1,0 +1,28 @@
+{
+    "name":"flag",
+    "description":"Flag command is used to add a new flag to your generator",
+    "flags":[
+       {
+            "name":"type",
+            "short":"t",
+            "description":"The flag type",
+            "type":"string",
+            "default":"string"
+        },
+        {
+            "name":"short",
+            "short":"s",
+            "description":"The flag short name",
+            "type":"string"
+        }
+    ],
+    "args":[
+          {
+            "name":"name",
+            "description":"The flag name",
+            "type":"string",
+            "required":true
+        }
+    ],
+    "script_type":"lua"
+}

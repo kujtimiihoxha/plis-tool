@@ -1,6 +1,6 @@
 {
     "name":"new",
-    "description":"The new supcomand creates a new generator",
+    "description":"The new supcomand creates a new generator/subgenerator",
     "aliases":["n"],
     "flags":[
         {
