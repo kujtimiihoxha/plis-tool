@@ -1,2 +1,5 @@
 local p = require("plis")
-p.help()
+
+function main()
+    p.help()
+end

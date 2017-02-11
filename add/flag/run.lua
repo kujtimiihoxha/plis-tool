@@ -1,12 +1,13 @@
 local p = require("plis")
-
+local fs = require("fileSystem")
+local json = require("json")
 -- The main function called by plis.
 function main()
-   config, err = p.readFile("config.json")
+   config, err = fs.readFile("config.json")
     if err ~= nil then
         return "The current folder is not a plis generator so you can not add a flag"
     end 
-    config = p.jsonDecode(config)
+    config = json.decode(config)
     flag = {}
     flag.name = p.args.name
     if p.flags.short ~= "" then
@@ -24,5 +25,5 @@ function main()
     end
     inx = table.getn(config.flags) + 1
     config.flags[inx] = flag
-    p.toJsonFile("config.json",config)
+    fs.writeFile("config.json",json.encodeF(config))
 end

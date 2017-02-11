@@ -1,5 +1,7 @@
 local p = require("plis")
-
+local fs = require("fileSystem")
+local json = require("json")
+local tp = require("templates")
 
 function main()
     flags = p.flags
@@ -12,20 +14,20 @@ function main()
         m.aliases = split(flags.aliases,",")
     end
     if flags.subcommand then 
-        config, err = p.readFile("config.json")
+        config, err =fs.readFile("config.json")
         if err ~= nil then
             return "The current folder is not a plis generator so you can not add a subcommand"
         end 
-        config = p.jsonDecode(config)
+        config = json.decode(config)
         if config.sub_commands == nil then
             config.sub_commands = {}
         end
         inx = table.getn(config.sub_commands) + 1
         config.sub_commands[inx] = m.name
         p.toJsonFile("config.json",config)
-        err = p.copyTemplateFolder("",m.name,m,{"test-project*",".*"})
+        err =tp.copyTemplateFolder("",m.name,m,{"test-project*",".*"})
     else
-        err = p.copyTemplateFolder("","plis-"..m.name,m)
+        err = tp.copyTemplateFolder("","plis-"..m.name,m)
         if err ~= nil then 
         return err
         end
