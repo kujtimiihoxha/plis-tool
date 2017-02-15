@@ -4,7 +4,7 @@
     ],
     "description": "Plis tool is a set of usefool commands that help you create other plis tools",
     "name": "tool",
-    "script_type": "lua",
+    "script_type": "js",
     "sub_commands": [
         "new",
         "add"

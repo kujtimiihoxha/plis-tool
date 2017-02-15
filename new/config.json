@@ -31,5 +31,5 @@
             "required":true
         }
     ],
-    "script_type":"lua"
+    "script_type":"js"
 }
