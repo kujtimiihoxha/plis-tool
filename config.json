@@ -1,10 +1,9 @@
 {
     "aliases": [
-        "gen",
-        "g"
+        "tl"
     ],
-    "description": "Plis new is a set of usefull generators",
-    "name": "generator",
+    "description": "Plis tool is a set of usefool commands that help you create other plis tools",
+    "name": "tool",
     "script_type": "lua",
     "sub_commands": [
         "new",

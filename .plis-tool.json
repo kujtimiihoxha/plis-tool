@@ -1,4 +1,4 @@
 {
-    "generator_name":"{{name}}",
+    "tool_name":"tool",
     "test_dir":"test-project"
 }

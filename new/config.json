@@ -1,18 +1,18 @@
 {
     "name":"new",
-    "description":"The new supcomand creates a new generator/subgenerator",
+    "description":"The new command creates a new tool",
     "aliases":["n"],
     "flags":[
         {
             "name":"aliases",
             "short":"a",
-            "description":"The generator aliases coma seperated",
+            "description":"The tools aliases coma seperated",
             "type":"string"
         },
         {
             "name":"type",
             "short":"t",
-            "description":"The generator script type",
+            "description":"The tools script type",
             "type":"string",
             "default":"lua"
         },

@@ -25,11 +25,36 @@ function main()
         inx = table.getn(config.sub_commands) + 1
         config.sub_commands[inx] = m.name
         p.toJsonFile("config.json",config)
-        err =tp.copyTemplateFolder("",m.name,m,{"test-project*",".*"})
-    else
-        err = tp.copyTemplateFolder("","plis-"..m.name,m)
+        err =tp.copyTemplateFolder("",m.name,m,{"test-project*",".*","run.*"})
         if err ~= nil then 
-        return err
+            return err
+        end
+        if m.type == "lua" then
+            err = tp.copyTemplate("run.lua.tpl","run.lua",m)
+            if err ~= nil then 
+                return err
+            end
+        elseif m.type == "js" then
+            err = tp.copyTemplate("run.js.tpl","run.js",m)
+            if err ~= nil then 
+                return err
+            end
+        end
+    else
+        err = tp.copyTemplateFolder("","plis-"..m.name,m,{"run.*"})
+        if err ~= nil then 
+            return err
+        end
+        if m.type == "lua" then
+            err = tp.copyTemplate("run.lua.tpl","run.lua",m)
+            if err ~= nil then 
+                return err
+            end
+        elseif m.type == "js" then
+            err = tp.copyTemplate("run.js.tpl","run.js",m)
+            if err ~= nil then 
+                return err
+            end
         end
     end
     return nil
