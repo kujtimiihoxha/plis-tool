@@ -10,6 +10,10 @@ After you have plis installed you can install **plis-tool** by running:
 ```shell
 plis get -g https://github.com/kujtimiihoxha/plis
 ```
+If you want the JS version you can run
+```shell
+plis get -g https://github.com/kujtimiihoxha/plis-tool --branch js
+```
 This command will install plis-tool globally so you can start creating your awesome tools.
 
 Find out what plis-tool can do by running:
