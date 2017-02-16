@@ -1,6 +1,6 @@
 {
     "name":"flag",
-    "description":"Flag command is used to add a new flag to your generator",
+    "description":"The Flag command is used to add a new flag to your tool",
     "flags":[
        {
             "name":"type",

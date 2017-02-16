@@ -22,10 +22,15 @@ function main()
         if config.sub_commands == nil then
             config.sub_commands = {}
         end
+        for i,c in ipairs(config.sub_commands) do
+            if c == m.name then
+                return "There is already a command with the same name"
+            end
+         end
         inx = table.getn(config.sub_commands) + 1
         config.sub_commands[inx] = m.name
-        p.toJsonFile("config.json",config)
-        err =tp.copyTemplateFolder("",m.name,m,{"test-project*",".*","run.*"})
+        fs.writeFile("config.json",json.encodeF(config))
+        err =tp.copyTemplateFolder("",m.name,m,{"test-project*",".*","run.*","README.md.tpl"})
         if err ~= nil then 
             return err
         end
