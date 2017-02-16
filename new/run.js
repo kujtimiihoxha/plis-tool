@@ -17,7 +17,7 @@ function main() {
     if (flags.subcommand) {
         var config = fs.readFile("config.json")
         if (!config) {
-            return "The current folder is not a plis generator so you can not add a subcommand"
+            return "The current folder is not a plis tool so you can not add a subcommand"
         }
         config = json.decode(config)
         if (!config.sub_commands) {

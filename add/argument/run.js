@@ -5,7 +5,7 @@ var json = require("json")
 function main() {
     var config = fs.readFile("config.json")
     if (!config) {
-        return
+        return "The current folder is not a plis tool so you can not add an argument"
     }
     config = json.decode(config)
     var flags = p.flags
