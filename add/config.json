@@ -1,7 +1,7 @@
 {
     "description": "Use the add command to add a flag or argument to your generator",
     "name": "add",
-    "script_type": "lua",
+    "script_type": "js",
     "sub_commands": [
         "flag",
         "argument"

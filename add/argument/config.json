@@ -1,7 +1,7 @@
 {
     "name":"argument",
     "aliases":["arg"],
-    "description":"This is the 'argument' plis generator ",
+    "description":"The argument command is used to add arguments to your tool",
       "flags":[
        {
             "name":"type",
@@ -25,5 +25,5 @@
             "required":true
         }
     ],
-    "script_type":"lua"
+    "script_type":"js"
 }

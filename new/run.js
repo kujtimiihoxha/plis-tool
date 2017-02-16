@@ -4,9 +4,9 @@ var json = require("json")
 var tp = require("templates")
 
 function main() {
-    flags = p.flags
-    args = p.args
-    m = {
+    var flags = p.flags
+    var args = p.args
+    var m = {
         name: args.name,
         type: flags.type,
         aliases: []
@@ -15,7 +15,7 @@ function main() {
         m.aliases = flags.aliases.split(",")
     }
     if (flags.subcommand) {
-        config = fs.readFile("config.json")
+        var config = fs.readFile("config.json")
         if (!config) {
             return "The current folder is not a plis generator so you can not add a subcommand"
         }
@@ -23,9 +23,18 @@ function main() {
         if (!config.sub_commands) {
             config.sub_commands = []
         }
+        var exists = false
+        config.sub_commands.forEach(function (c) {
+            if (c == m.name) {
+                exists = true
+            }
+        })
+        if (exists) {
+            return "A command with this name already exists"
+        }
         config.sub_commands[config.sub_commands.length] = m.name
-        p.toJsonFile("config.json", config)
-        err = tp.copyTemplateFolder("", m.name, m, ["test-project*", ".*", "run.*"])
+        fs.writeFile("config.json",json.encodeF(config))
+        var err = tp.copyTemplateFolder("", m.name, m, ["test-project*", ".*", "run.*","README.md.tpl"])
         if (!err) {
             return
         }
@@ -42,7 +51,7 @@ function main() {
         }
     }
     else {
-        err = tp.copyTemplateFolder("", "plis-" + m.name, m, ["run.*"])
+        var err = tp.copyTemplateFolder("", "plis-" + m.name, m, ["run.*"])
         if (!err) {
             return
         }
