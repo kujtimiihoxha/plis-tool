@@ -1,5 +1,5 @@
 {
-    "description": "Use the add command to add a flag or argument to your generator",
+    "description": "Use the add command to add a flag or argument to your tool",
     "name": "add",
     "script_type": "js",
     "sub_commands": [
