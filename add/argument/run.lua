@@ -5,7 +5,7 @@ local json = require("json")
 function main()
    config, err = fs.readFile("config.json")
     if err ~= nil then
-        return "The current folder is not a plis generator so you can not add a flag"
+        return "The current folder is not a plis tool so you can not add a flag"
     end 
     config = json.decode(config)
     arg = {}

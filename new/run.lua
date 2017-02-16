@@ -16,7 +16,7 @@ function main()
     if flags.subcommand then 
         config, err =fs.readFile("config.json")
         if err ~= nil then
-            return "The current folder is not a plis generator so you can not add a subcommand"
+            return "The current folder is not a plis tool so you can not add a subcommand"
         end 
         config = json.decode(config)
         if config.sub_commands == nil then
