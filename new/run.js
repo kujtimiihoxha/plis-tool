@@ -23,6 +23,7 @@ function main() {
         if (!config.sub_commands) {
             config.sub_commands = []
         }
+        m.type = config.script_type
         var exists = false
         config.sub_commands.forEach(function (c) {
             if (c == m.name) {
