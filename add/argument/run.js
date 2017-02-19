@@ -30,5 +30,5 @@ function main() {
 
     }
     config.args[config.args.length] = arg
-    fs.writeFile("config.json", json.encodeF(config))
+    fs.writeFile("config.json", json.encodeF(config),true)
 }

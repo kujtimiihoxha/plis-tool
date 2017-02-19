@@ -29,5 +29,5 @@ function main() {
         return "There is already a flag with the same name"
     }
     config.flags[config.flags.length] = flag
-    fs.writeFile("config.json", json.encodeF(config))
+    fs.writeFile("config.json", json.encodeF(config),true)
 }

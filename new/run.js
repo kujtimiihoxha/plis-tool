@@ -34,7 +34,7 @@ function main() {
             return "A command with this name already exists"
         }
         config.sub_commands[config.sub_commands.length] = m.name
-        fs.writeFile("config.json",json.encodeF(config))
+        fs.writeFile("config.json",json.encodeF(config),true)
         var err = tp.copyTemplateFolder("", m.name, m, ["test-project*", ".*", "run.*","README.md.tpl"])
         if (!err) {
             return
