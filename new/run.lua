@@ -30,7 +30,7 @@ function main()
          end
         inx = table.getn(config.sub_commands) + 1
         config.sub_commands[inx] = m.name
-        fs.writeFile("config.json",json.encodeF(config))
+        fs.writeFile("config.json",json.encodeF(config),true)
         err =tp.copyTemplateFolder("",m.name,m,{"test-project*",".*","run.*","README.md.tpl"})
         if err ~= nil then 
             return err

@@ -25,5 +25,5 @@ function main()
     end
     inx = table.getn(config.flags) + 1
     config.flags[inx] = flag
-    fs.writeFile("config.json",json.encodeF(config))
+    fs.writeFile("config.json",json.encodeF(config),true)
 end
