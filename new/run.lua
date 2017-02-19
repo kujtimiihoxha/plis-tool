@@ -19,6 +19,7 @@ function main()
             return "The current folder is not a plis tool so you can not add a subcommand"
         end 
         config = json.decode(config)
+        m.type = config.script_type
         if config.sub_commands == nil then
             config.sub_commands = {}
         end
