@@ -14,7 +14,7 @@
             "short":"t",
             "description":"The tools script type",
             "type":"string",
-            "default":"lua"
+            "default":"js"
         },
         {
             "name":"subcommand",
